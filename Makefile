@@ -1,10 +1,14 @@
 
-.PHONY: build
+.PHONY: all
+
+all: build zip
 
 build:
-	GOOS=linux CGO_ENABLED=0 go build -o bootstrap
+	GOOS=linux GOARCH=arm64 CGO_ENABLED=0 go build -o bootstrap
+zip:
+	zip -j event-handler.zip bootstrap
 
 clean:
-	rm -f bootstrap
+	rm -f bootstrap event-handler.zip
 
-.DEFAULT_GOAL := build
+.DEFAULT_GOAL := all
