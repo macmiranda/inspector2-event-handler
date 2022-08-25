@@ -1,5 +1,4 @@
-module github.com/apollon-fulfillment/xxxx
-
+module github.com/macmiranda/inspector2-event-handler
 go 1.16
 
 require (
